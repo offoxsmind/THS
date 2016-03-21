@@ -1,0 +1,36 @@
+{
+    "appKeys": {},
+    "capabilities": [
+        "configurable"
+    ],
+    "companyName": "somberfox@gmail.com",
+    "enableMultiJS": true,
+    "longName": "The Hungering Saga",
+    "projectType": "native",
+    "resources": {
+        "media": [
+            {
+                "file": "images/THS.png",
+                "name": "hexa",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "fonts/tyepaloon.ttf",
+                "name": "zelda14",
+                "targetPlatforms": null,
+                "type": "font"
+            }
+        ]
+    },
+    "sdkVersion": "3",
+    "shortName": "The Hungering Saga",
+    "targetPlatforms": [
+        "chalk"
+    ],
+    "uuid": "6d7e7775-7cad-4644-8c41-9b41c221a5ed",
+    "versionLabel": "1.0",
+    "watchapp": {
+        "watchface": true
+    }
+}
