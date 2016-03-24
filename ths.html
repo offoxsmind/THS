@@ -119,6 +119,15 @@
     var hourColorPicker = document.getElementById('hour_color_picker');
     var minuteColorPicker = document.getElementById('minute_color_picker');
     var circleColorPicker = document.getElementById('circle_color_picker');
+    var highContrastCheckbox = document.getElementById('high_contrast_checkbox');
+    // Load any previously saved configuration, if available
+    if(localStorage['high_contrast']) {
+      highContrastCheckbox.checked = JSON.parse(localStorage['high_contrast']);
+      backgroundColorPicker.value = localStorage['background_color'];
+      hourColorPicker.value = localStorage['hour_color'];
+      minutePicker.value = localStorage['minute_color'];
+      circleColorPicker.value = localStorage['circle_color'];
+    }
 
   })();
   </script>
