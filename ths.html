@@ -64,18 +64,6 @@
       
     </div>
 
-    <div class='item-container'>
-      <div class='item-container-header'>Accessibility</div>
-      <div class='item-container-content'>
-        <label class='item'>
-          Default High Readability Mode
-          <input id='high_contrast_checkbox' type='checkbox' class='item-toggle'>
-        </label>
-      </div>
-      <div class='item-container-footer'>
-        This switches the app colors to default colors for ease of reading.
-      </div>
-    </div>
 
     <div class='item-container'>
       <div class='button-container'>
@@ -89,7 +77,6 @@
     var hourColorPicker = document.getElementById('hour_color_picker');
     var minuteColorPicker = document.getElementById('minute_color_picker');
     var circleColorPicker = document.getElementById('circle_color_picker');
-    var highContrastCheckbox = document.getElementById('high_contrast_checkbox');
     
  
     var options = {
@@ -97,17 +84,17 @@
       'hour_color' : hourColorPicker.value,
       'minute_color' : minuteColorPicker.value,
       'circle_color' : circleColorPicker.value,
-      'high_contrast': highContrastCheckbox.checked
     };
+    
     // Save for next launch
     localStorage['background_color'] = options['background_color'];
     localStorage['hour_color'] = options['hour_color'];
     localStorage['minute_color'] = options['minute_color'];
     localStorage['circle_color'] = options['circle_color'];
-    localStorage['high_contrast'] = options['high_contrast'];
     console.log('Got options: ' + JSON.stringify(options));
     return options;
   }
+  
   function getQueryParam(variable, defaultValue) {
     var query = location.search.substring(1);
     var vars = query.split('&');
