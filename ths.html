@@ -53,6 +53,16 @@
       </div>
       
       
+      <div class='item-container-content'>
+        <label class='item'>
+          Circle Color
+          <input id='circle_color_picker' type='text' class='item-color item-color-sunny' value='#555555'>
+        </label>
+      </div>
+        <div class='item-container-footer'>
+        Choose the color of the center circle.
+      </div>
+      
       
     </div>
 
@@ -78,14 +88,24 @@
   <script>
   function getConfigData() {
     var backgroundColorPicker = document.getElementById('background_color_picker');
+    var hourColorPicker = document.getElementById('hour_color_picker');
+    var minuteColorPicker = document.getElementById('minute_color_picker');
+    var circleColorPicker = document.getElementById('circle_color_picker');
     var highContrastCheckbox = document.getElementById('high_contrast_checkbox');
+    
  
     var options = {
       'background_color': backgroundColorPicker.value,
+      'hour_color' : hourColorPicker.value,
+      'minute_color' : minuteColorPicker.value,
+      'circle_color' : circleColorPicker.value,
       'high_contrast': highContrastCheckbox.checked
     };
     // Save for next launch
     localStorage['background_color'] = options['background_color'];
+    localStorage['hour_color'] = options['hour_color'];
+    localStorage['minute_color'] = options['minute_color'];
+    localStorage['circle_color'] = options['circle_color'];
     localStorage['high_contrast'] = options['high_contrast'];
     console.log('Got options: ' + JSON.stringify(options));
     return options;
@@ -111,11 +131,17 @@
   });
   (function() {
     var backgroundColorPicker = document.getElementById('background_color_picker');
+    var hourColorPicker = document.getElementById('hour_color_picker');
+    var minuteColorPicker = document.getElementById('minute_color_picker');
+    var circleColorPicker = document.getElementById('circle_color_picker');
     var highContrastCheckbox = document.getElementById('high_contrast_checkbox');
     // Load any previously saved configuration, if available
     if(localStorage['high_contrast']) {
       highContrastCheckbox.checked = JSON.parse(localStorage['high_contrast']);
       backgroundColorPicker.value = localStorage['background_color'];
+      hourColorPicker.value = localStorage['hour_color'];
+      minutePicker.value = localStorage['minute_color'];
+      circleColorPicker.value = localStorage['circle_color'];
     }
   })();
   </script>
