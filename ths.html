@@ -29,7 +29,7 @@
         </label>
       </div>
       <div class='item-container-footer'>
-        Choose the app's background color. Used if High Contrast Mode is not selected. Note: Only available on Basalt and Pebble Time Round watches that support many colors.
+        Choose the app's background color.
       </div>
       <div class='item-container-content'>
         <label class='item'>
@@ -119,10 +119,8 @@
     var hourColorPicker = document.getElementById('hour_color_picker');
     var minuteColorPicker = document.getElementById('minute_color_picker');
     var circleColorPicker = document.getElementById('circle_color_picker');
-    var highContrastCheckbox = document.getElementById('high_contrast_checkbox');
     // Load any previously saved configuration, if available
     if(localStorage['high_contrast']) {
-      highContrastCheckbox.checked = JSON.parse(localStorage['high_contrast']);
       backgroundColorPicker.value = localStorage['background_color'];
       hourColorPicker.value = localStorage['hour_color'];
       minutePicker.value = localStorage['minute_color'];
