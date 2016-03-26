@@ -122,6 +122,7 @@
     var circleColorPicker = document.getElementById('circle_color_picker');
     // Load any previously saved configuration, if available
     if(localStorage['high_contrast']) {
+      highContrastCheckbox.checked = JSON.parse(localStorage['high_contrast']);
       backgroundColorPicker.value = localStorage['background_color'];
       hourColorPicker.value = localStorage['hour_color'];
       minuteColorPicker.value = localStorage['minute_color'];
