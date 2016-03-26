@@ -92,6 +92,7 @@
     localStorage['hour_color'] = options['hour_color'];
     localStorage['minute_color'] = options['minute_color'];
     localStorage['circle_color'] = options['circle_color'];
+    
     console.log('Got options: ' + JSON.stringify(options));
     return options;
   }
@@ -120,6 +121,7 @@
     var hourColorPicker = document.getElementById('hour_color_picker');
     var minuteColorPicker = document.getElementById('minute_color_picker');
     var circleColorPicker = document.getElementById('circle_color_picker');
+    
     // Load any previously saved configuration, if available
     if(localStorage['high_contrast']) {
       highContrastCheckbox.checked = JSON.parse(localStorage['high_contrast']);
