@@ -20,6 +20,19 @@
   <body>
     <h1 class='title'>Configuration</h1>
 
+
+    <div class='item-container'>
+      <div class='item-container-header'>Customizability</div>
+      <div class='item-container-content'>
+        <label class='item'>
+          (NOT ACTIVE YET) Vibrate on Bluetooth Disconnect  (NOT ACTIVE YET)
+          <input id='bluetooth_disco_checkbox' type='checkbox' class='item-toggle'>
+        </label>
+      </div>
+      <div class='item-container-footer'>
+        Vibrates the watch on loss of bluetooth signal.
+      </div>
+      
     <div class='item-container'>
       <div class='item-container-header'>Customizability</div>
       <div class='item-container-content'>
@@ -74,6 +87,7 @@
   </body>
   <script>
   function getConfigData() {
+    var bluetoothdiscoCheckbox = document.getElementById('bluetooth_disco_checkbox');
     var backgroundColorPicker = document.getElementById('background_color_picker');
     var hourColorPicker = document.getElementById('hour_color_picker');
     var minuteColorPicker = document.getElementById('minute_color_picker');
@@ -81,6 +95,7 @@
     
  
     var options = {
+      'bluetooth_disco' : bluetoothdiscoCheckbox.checked,
       'background_color': backgroundColorPicker.value,
       'hour_color' : hourColorPicker.value,
       'minute_color' : minuteColorPicker.value,
@@ -88,6 +103,7 @@
     };
     
     // Save for next launch
+    localStorage['bluetooth_disco'] = options['bluetooth_disco'];
     localStorage['background_color'] = options['background_color'];
     localStorage['hour_color'] = options['hour_color'];
     localStorage['minute_color'] = options['minute_color'];
@@ -117,12 +133,14 @@
     document.location = return_to + encodeURIComponent(JSON.stringify(getConfigData()));
   });
   (function() {
+    var bluetoothdiscoCheckbox = document.getElementById('bluetooth_disco_checkbox')
     var backgroundColorPicker = document.getElementById('background_color_picker');
     var hourColorPicker = document.getElementById('hour_color_picker');
     var minuteColorPicker = document.getElementById('minute_color_picker');
     var circleColorPicker = document.getElementById('circle_color_picker');
     
     // Load any previously saved configuration, if available
+      bluetoothdiscoCheckbox.checked = localStorage['bluetooth_disco'];
       backgroundColorPicker.value = localStorage['background_color'];
       hourColorPicker.value = localStorage['hour_color'];
       minuteColorPicker.value = localStorage['minute_color'];
